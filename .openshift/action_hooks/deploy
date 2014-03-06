@@ -14,3 +14,8 @@ source "$OPENSHIFT_REPO_DIR/.openshift/lib/utils"
 #  installed.
 ensure_node_is_installed
 
+
+#  Source Meteor functions.
+source "$OPENSHIFT_REPO_DIR/.openshift/lib/meteor"
+
+install_and_build_meteor_project
