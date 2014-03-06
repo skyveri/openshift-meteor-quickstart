@@ -4,20 +4,25 @@ Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshif
 
 ## Create an OpenShift app from this QuickStart
 
-    rhc app create myapp nodejs-0.10 mongodb-2.4 --from-code=https://github.com/skyveri/openshift-meteor-quickstart.git
+    rhc app create myopenshiftapp nodejs-0.10 mongodb-2.4 --from-code=https://github.com/skyveri/openshift-meteor-quickstart.git
 
-## Create a Meteor project
+## Create a Meteor app
 
-To create a project:
+    meteor create mymeteorapp
 
-    meteor create myproject
+## Editing the app
 
-Or you can create one of Meteor's example projects:
+Every time you edit your code, simply commit the changes:
 
-    meteor create --example leaderboard
+    git add -A
+    git commit -m "Describe the changes you made"
 
 ## Deploy
 
-    git add -A
-    git commit -m "Create Meteor project"
+Make sure all changes have been committed:
+
+    git status
+
+Deploy your app on OpenShift using one command:
+
     git push
