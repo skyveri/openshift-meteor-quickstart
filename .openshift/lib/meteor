@@ -1,0 +1,91 @@
+#!/bin/bash
+#
+#  Meteor installation and project build functions.
+#
+
+
+# We can't to write to our actual home directory.
+# We'll pretend some other dir is $HOME.
+NEW_HOME="${OPENSHIFT_DATA_DIR}home/"
+
+HOME_BIN="${NEW_HOME}bin/"
+METEOR_DIR="" # Computed below
+METEOR_SCRIPT="${NEW_HOME}.meteor/tools/latest/bin/meteor" # Meteor installer puts it here
+METEORITE_SCRIPT="${OPENSHIFT_REPO_DIR}node_modules/meteorite/bin/mrt.js"
+
+
+# Main function to be called from an OpenShift hook
+function install_and_build_meteor_project() {
+    HOME_ORIGINAL=$HOME
+    HOME=$NEW_HOME
+
+    prepare_home_dir
+    install_meteor
+    build_meteor_project
+
+    # Back to original HOME
+    HOME=$HOME_ORIGINAL
+
+}  #  End of function  install_and_build_meteor_project
+
+
+# Find a meteor project directory
+function find_meteor_dir() {
+    local find_cmd="find $1 -maxdepth 2 -type d -name '\.meteor' | head -1"
+    local dir=$(eval $find_cmd)
+
+    if [ "$dir" ]; then
+        echo "$(dirname "$dir")"
+    else
+        echo "FATAL: Meteor project directory could not be found."
+        exit 1
+    fi
+
+}  #  End of function  find_meteor_dir
+
+METEOR_DIR=$(find_meteor_dir ${OPENSHIFT_REPO_DIR})
+
+
+function prepare_home_dir() {
+    if [ ! -d "$HOME" ]; then
+        mkdir "$HOME"
+    fi
+
+    if [ ! -d "${HOME_BIN}" ]; then
+        mkdir "${HOME_BIN}"
+    fi
+
+    export PATH="${HOME_BIN}:${PATH}"
+
+}  #  End of function  prepare_home_dir
+
+
+function install_meteor() {
+    cd $METEOR_DIR
+
+    if [ ! -f "${METEOR_SCRIPT}" ]; then
+        curl https://install.meteor.com | /bin/sh
+
+        ln -sf "${METEOR_SCRIPT}" "${HOME_BIN}"
+        echo "Meteor installation complete."
+    else
+        echo "Meteor installation already found. Skipping install."
+    fi
+
+}  #  End of function  install_meteor
+
+
+function build_meteor_project() {
+    cd $METEOR_DIR
+
+    if [ -f "${METEORITE_SCRIPT}" ]; then
+        ${METEORITE_SCRIPT} bundle ${OPENSHIFT_REPO_DIR}bundle.tgz
+    else
+        meteor bundle ${OPENSHIFT_REPO_DIR}bundle.tgz
+    fi
+
+    cd ${OPENSHIFT_REPO_DIR}
+    tar -xzf bundle.tgz
+    rm bundle.tgz
+
+}  #  End of function  build_meteor_project
