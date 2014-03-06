@@ -1,3 +1,23 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+# Meteor.js on OpenShift
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-nodejs/README.md
+Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshift.com/)
+
+## Create an OpenShift app from this QuickStart
+
+    rhc app create meteor nodejs-0.10 mongodb-2.4 --from-code=https://github.com/ildarsamit/openshift-meteor-quickstart.git
+
+## Create a Meteor project
+
+To create an example project:
+
+    meteor create mymeteorapp
+
+Or you can create one of Meteor's example projects:
+
+    meteor create --example leaderboard
+
+## Deploy
+
+    git add -A
+    git commit -m "Create Meteor project"
+    git push
