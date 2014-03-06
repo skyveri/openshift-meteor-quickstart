@@ -30,7 +30,7 @@ Deploy your app on OpenShift:
 
 ## Credits
 
-This project uses code from these projects:
+This QuickStart uses code from these projects:
 
 > [Meteor.js on OpenShift](https://github.com/openshift-quickstart/openshift-meteorjs-quickstart)  
 > [Running a custom/latest Node[.js] version on Red Hat's OpenShift PaaS](https://github.com/ramr/nodejs-custom-version-openshift)
