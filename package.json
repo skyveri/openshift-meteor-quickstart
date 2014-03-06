@@ -1,17 +1,20 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "OpenShift-Meteor",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Meteor Sample Application",
   "keywords": [
     "OpenShift",
     "Node.js",
     "application",
-    "openshift"
+    "openshift",
+    "Meteor",
+    "Meteor.js",
+    "meteorjs"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Skyveri",
+    "email": "ildar.samit@gmail.com",
+    "url": "http://www.skyveri.com/"
   },
   "homepage": "http://www.openshift.com/",
   "repository": {
@@ -20,16 +23,20 @@
   },
 
   "engines": {
-    "node": ">= 0.6.0",
+    "node": ">= 0.10.25",
     "npm": ">= 1.0.0"
   },
 
   "dependencies": {
-    "express": "~3.4.4"
+    "fibers": "~1.0.0",
+    "meteorite": "*"
   },
   "devDependencies": {},
   "bundleDependencies": [],
 
   "private": true,
-  "main": "server.js"
+  "scripts": {
+    "start": "node meteorshim.js"
+  },
+  "main": "meteorshim.js"
 }
