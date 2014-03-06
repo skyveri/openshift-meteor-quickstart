@@ -28,7 +28,7 @@ if(!err)
 }else{
   var http = require('http');
   // Start a server that returns a short list of instructions
-  var dev_instructions = "<body><h1>Almost there!</h1><p>To complete the installation, just follow <a href='https://github.com/skyveri/openshift-meteor-quickstart' target='_blank'>these instructions</a>.</p></body>";
+  var dev_instructions = "<body><h1>Almost there!</h1><p>To complete the installation, just follow <a href='https://github.com/skyveri/openshift-meteor-quickstart#meteor-on-openshift' target='_blank'>these instructions</a>.</p></body>";
   http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
   res.end(dev_instructions);
