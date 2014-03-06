@@ -1,4 +1,4 @@
-# Meteor.js on OpenShift
+# Meteor on OpenShift
 
 Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshift.com/).
 
