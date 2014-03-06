@@ -13,7 +13,7 @@ Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshif
 
 ## Editing the app
 
-Every time you edit your code, simply commit the changes:
+Every time you edit your code, commit the changes:
 
     git add -A
     git commit -m "Describe the changes you made"
