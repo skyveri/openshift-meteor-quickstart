@@ -1,10 +1,10 @@
 # Meteor.js on OpenShift
 
-Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshift.com/)
+Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshift.com/).
 
 ## Create an OpenShift app from this QuickStart
 
-    rhc app create meteor nodejs-0.10 mongodb-2.4 --from-code=https://github.com/ildarsamit/openshift-meteor-quickstart.git
+    rhc app create myapp nodejs-0.10 mongodb-2.4 --from-code=https://github.com/ildarsamit/openshift-meteor-quickstart.git
 
 ## Create a Meteor project
 
