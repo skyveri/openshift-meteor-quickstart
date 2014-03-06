@@ -27,3 +27,10 @@ Make sure all changes have been committed:
 Deploy your app on OpenShift:
 
     git push
+
+## Credits
+
+This project uses code from these projects:
+
+> [Meteor.js on OpenShift](https://github.com/openshift-quickstart/openshift-meteorjs-quickstart)  
+> [Running a custom/latest Node[.js] version on Red Hat's OpenShift PaaS](https://github.com/ramr/nodejs-custom-version-openshift)
