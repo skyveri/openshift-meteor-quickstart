@@ -8,9 +8,9 @@ Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshif
 
 ## Create a Meteor project
 
-To create an example project:
+To create a project:
 
-    meteor create mymeteorapp
+    meteor create myproject
 
 Or you can create one of Meteor's example projects:
 
