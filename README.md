@@ -8,6 +8,7 @@ Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshif
 
 ## Create a Meteor app
 
+    cd myopenshiftapp
     meteor create mymeteorapp
 
 ## Editing the app
@@ -23,6 +24,6 @@ Make sure all changes have been committed:
 
     git status
 
-Deploy your app on OpenShift using one command:
+Deploy your app on OpenShift:
 
     git push
