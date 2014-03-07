@@ -1,7 +1,7 @@
 {
   "name": "OpenShift-Meteor",
   "version": "1.0.0",
-  "description": "Meteor Sample Application",
+  "description": "Meteor QuickStart for OpenShift",
   "keywords": [
     "OpenShift",
     "Node.js",
