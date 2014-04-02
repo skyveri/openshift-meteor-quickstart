@@ -8,6 +8,8 @@ Deploy a [Meteor](http://meteor.com/) application on [OpenShift](http://openshif
 
 ## Create a Meteor app
 
+Make sure you have Meteor installed (see [instructions](http://docs.meteor.com/#quickstart)) and do the following:
+
     cd myopenshiftapp
     meteor create mymeteorapp
 
